@@ -1,4 +1,3 @@
-# DT
 # Optimal Transport, Dold-Thom theorem, and Sweepouts.
 
 This repository contains a draft article which describes various connections and applications of Dold-Thom's theorem and optimal transportation.
