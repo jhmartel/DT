@@ -1,0 +1,218 @@
+\documentclass[12pt]{amsart}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage[all]{xy}
+\usepackage{enumerate}
+\usepackage{geometry}
+%\usepackage{biblatex}
+%\usepackage{hyperref}
+%\usepackage[autostyle]{csquotes}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage[
+    backend=biber,
+style=alphabetic,
+sorting=nyt,
+   % style=authoryear-icomp,
+    %sortlocale=de_DE,
+    %natbib=true,
+    %author=true,
+%style=verbose,
+%journal=true,
+%url=true, 
+%    doi=false,
+%    eprint=true
+]{biblatex}
+\addbibresource{STABLEreferences.bib}
+
+\usepackage[]{hyperref}
+\hypersetup{
+    colorlinks=true,
+}
+
+
+\newtheorem{thm}{Theorem}
+\newtheorem*{half}{Halfspace Condition}
+\newtheorem*{mkthm}{Monge-Kantorovich Duality}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prob}{Problem}
+\newtheorem{cor}{Corollary}
+\newtheorem{question}[thm]{Question}
+\newtheorem*{flashbang}{FlashBang Principle}
+\newtheorem*{Lefschetz}{Lefschetz theorem}
+\newtheorem*{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}
+\newtheorem{exx}{Example}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bG}{\mathbb{G}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bH}{\mathbb{H}}
+\newcommand{\bq}{\bar{Q}[t]}
+\newcommand{\bb}{\bullet}
+\newcommand{\del}{\partial}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\mR}{\bR^\times_{>0}}
+\newcommand{\conv}{\overbar{conv}}
+\newcommand{\ysub}{\del^c \psi(y)}
+\newcommand{\sub}{\del^c \psi^c(x')}
+\newcommand{\subb}{\del^c \psi^c(x'')}
+\newcommand{\hh}{\hookleftarrow}
+\newcommand{\bD}{\mathbb{D}}
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\uF}{\underline{F}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\bX}{\overline{X}^{BS/\bQ}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sZ}{\mathscr{Z}}
+\newcommand{\cd}{c_\Delta}
+\newcommand{\sH}{\mathscr{H}}
+\begin{document}
+
+
+\title{}
+
+
+\author{J. H. Martel}
+\date{\today}
+\email{jhmartel@protonmail.com}
+\maketitle
+
+\begin{abstract}
+
+
+\end{abstract}
+\tableofcontents
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \`A priori $T_x Z'$ is a cone in the vector space $T_x X$, and it is useful to have criteria for which $T_x Z'$ is a vector subspace of $T_x X$. This requires the existence of two-sided transversals throughout the relative interior of $Z'$ in $X$. [Insert]
+
+In the following proposition we suppose $c$ is a cost satisfying the standard assumptions (A0)--(A5).
+\begin{prop}
+Let $\psi$ be $c$-concave potential. For $x_0 \in X$, abbreviate $Y_0:=\del^c \psi^c (x_0)$, and $Z'(x_0):=Z(Y_0)$. Suppose:
+\begin{itemize}
+\item $\nabla_x \cd(x,y,y_1)\neq 0$ for all $y\in Y$, $y_1\in Y_0$, $x\in Z'(x_0)$; and
+\item $\dim (span\{\nabla_x\cd(x,y_1,y_0)~|~y_0, y_1 \in Y_0\})$ is constant throughout $Z'(x_0)$.
+\end{itemize}
+Then the topological boundary $\del Z'(x_0)$ can be expressed as the union \begin{equation}
+\del Z'(x_0)=(Z'(x_0) \cap \del A) \cup (\cup \{ Z(Y_J) ~|~Y_J \supset Y_0, ~Y_J \neq Y_0\}).\label{singboundary}\end{equation}
+
+\label{singboundprop}
+\end{prop}
+
+The formula \ref{singboundary} is reminiscient of the Bruhat-Tits cellular decomposition. The left hand intersection $Z' \cap \del A$ corresponds to that part of $Z'$ which exits the activated domain $A$. If $A$ is unbounded, then we find $\del A$ is empty, and there is no contribution to the boundary of $Z'$. The interesting part is the right hand term: the boundary of $Z'$ consists of contiguous cells $Z(Y_J)$ which strictly contain $Y_0$. 
+
+We can use \ref{singboundary} to define singular chains on the active domain $A$. The idea is to find subsets $\{Y'\}'$ of $2^Y$ (i.e. collections of subsets $Y'$ of $Y$) such that the formal chain sum $\sum_{\{Y'\}'} Z(Y')$ has trivial singular boundary $$\del^{sing} (\sum_{\{Y'\}'} Z(Y'))=\sum_{\{Y'\}'} \del_X Z(Y')$$ over $\bZ/2$ coefficients. There is slight abuse of notation in this expression for $\del^{sing}$ : we interpret $\del_X Z(Y')$ as a singular chain and this is not strictly correct. 
+
+For applications to algebraic topology, it is important to characterize collections $\{Y'\}'$ of closed subsets (subcategories of $spt(Z)$ or $2^Y$) for which $\{Z(Y_i)| i\in I\}$ assembles to a cycle in the sense of singular homology on $X$. There is an elementary cohomological criterion using identity \eqref{adj} and Proposition \ref{cycle}. %We illustrate with some elementary examples.
+
+
+
+\begin{exx}
+Suppose $Y$ is a finite set. The category $2^Y$ has natural cellular structure of a cube. And this cube produces simplicial chain and dual simplicial cochain complexes, taking all coefficients over $\bZ/2$. We emphasize the cochain complexes arising from $2^Y$. For the complete category $2^Y$ this cochain complex is aspherical (trivial homology). However the restricted cochain complex on the subcategory $spt(Z)$ of $2^Y$ will typically have nontrivial cohomology. This is analogous to the elementary fact that aspherical spaces, e.g. $\bR^d$, admit numerous homologically nontrivial subsets. 
+\end{exx}
+
+\begin{exx} 
+Let $Y=\{a,b,c\}$. Then the graded commutative ring $\bZ_2[a,b,c]/(a^2, b^2, c^2)$ determines a natural cochain complex $$0\to \bZ_2 \to \bZ_2.a\oplus \bZ_2.b \oplus \bZ_2.c \to \bZ_2.ab \oplus \bZ_2.ac \oplus \bZ_2.bc \to \bZ_2.abc \to 0, $$ with coboundary operator (i.e. differential) defined by $\delta(1)=a+b+c$, $\delta(a)=ab+ac$, $\delta(b)=ab+bc$, $\delta(c)=ac+bc$, $\delta(ab)=abc$, $\delta(bc)=abc$, etc. The cubical cochain complex is naturally isomorphic to the Koszul complex over $\bZ/2$ defined by the element $\overline{y}:=\sum_{y\in Y} y$. Recall the Koszul complex is a cochain complex $$0\to \bZ/2 \to \wedge^1 Y \to \wedge^2 Y \to \cdots, $$ where the coboundary operators take the form $d_{\overline{y}}(\xi)=\xi \wedge \overline{y}$ for every cochain group. We abuse notation and represent $2^Y$ as the $\bZ/2$-module $\bZ/2(Y)$. We refer the reader to \cite[Ch.IV.A]{local} for further details.
+\end{exx}
+
+\begin{exx}
+Let $P$ be a convex compact polyhedron with finite extreme points $\sE[P]$ in a finite-dimensional affine space $\bR^{d+1}$. The extreme point set $\sE[F]$ coincides with the topological vertex set of the topological boundary $\del P$ of $P$, and $\sE[P]$ leads to a simplicial-complex on the boundary $\del P$. Let $\{C_n^{simp}(\del P)\}_n$ be the simplicial chain group of $\del P$ with simplicial boundary operator $$\del_{\del P,n}: C_n^{simp}(\del P) \to C_{n-1}^{simp}(\del P)$$ between the chain groups $$\cdots \to C_2^{simp}(\del P) \to C_1^{simp}(\del P) \to C_0^{simp}(\del P) \to 0.$$ 
+
+Now construct $Q=P^\vee$ the polar polyhedron with respect to $P$ and the inner product $\langle, \rangle$ on $\bR^{d+1}$. See \cite[\S 1.5.4, pp.45-49]{Alexandrov} for definition. The polar polyhedron $Q=P^\vee$ has well-defined simplicial chain structure with simplicial boundary operator $$\del_{\del Q,n}:C_n(Q) \to C_{n-1}(Q)$$ defined between the simplicial chain groups. The boundary-operator $\del_{\del Q}$ is $(-1)$-degree map between these chain groups. 
+
+The polar correspondance $P\mapsto P^\vee$ can be viewed as contravariant functor $POL: 2^Y \to 2^{Y^\vee}$ between $P$ and the polar $P^\vee$. The self-duality $(P^\vee)^\vee=P$ implies the functors $POL: 2^Y \to 2^{Y^\vee}$, $POL: 2^{Y^\vee} \to 2^Y$ are isomorphisms between the categories $2^Y$ and $2^{Y^\vee}$. The polar correspondance defines isomorphisms $$C_n^{simp}(\del P^{\vee}) \simeq C_{N-n}^{simp}(\del P)$$ for every $n\in \bZ$, where $N+1=\dim(P)$. The correspondance allows the construction of $(+1)$-degree maps $\del_Y=\{\del_{Y,n}\}_n$ between the simplicial chain groups \begin{equation} \delta^n_P: C_n(\del P) \to C_{n+1}(\del P), ~~\delta^n_Y(\alpha):=(\del_{Y^\vee, N-n} (\alpha^\vee))^\vee. \label{dualdel}
+\end{equation} 
+
+\end{exx}
+
+
+
+
+
+
+The polar-correspondance also transports the boundary map $\del_{P^o}=\{\del^j_{P^o}|j\in \bZ\}$ to a coboundary map $\delta=\delta_P$ on $(P^o)^o=P$. Indeed the simplicial boundary operator on the polar $Q=P^{o}$ transforms, via the polar correspondance to differential cochain maps $\delta_P=\{\delta_P^n|n\in \bZ\}$ defined $$\delta^n_P: C_n^{simp}(\del P) \to C_{n+1}^{simp}(\del P)$$ between the simplicial chain groups of $\del P$. The polar-correspondance $P \mapsto P^{o}$ defines isomorphisms between the chain groups $$C_j^{simp}(\del P^{o}) \simeq C_{d-j}^{simp}(\del P)$$ for every $j\in \bZ$. The polar-correspondance also transports the boundary map $\del_{P^o}=\{\del^j_{P^o}|j\in \bZ\}$ to a coboundary map $\delta=\delta_P$ on $(P^o)^o=P$. 
+
+The construction of a coboundary map via the polar-correspondance can be extended to simplicial chain sums $\underline{\alpha}=\sum_{i\in I} \alpha_i$. Then we obtain a polar chain sum $\underline{\alpha}^\vee$ defined by $$\underline{\alpha}^\vee= \sum_{i\in I} \alpha_i^\vee.$$ 
+
+
+%%Need rewrite%%
+%Now the singularity functor $Z: 2^Y \to 2^X$ defines a set-mapping $$Hom_{TOP}(\Delta^k, Y) \to Hom_{TOP}(\Delta^k, 2^X),$$ where $\Delta^k$ is the standard $k$-dimensional simplex. In otherwords, a continuous mapping $\alpha: \Delta^k \to Y$ produces a continuous mapping $Z(\alpha): \Delta^k \to 2^X$. Thus $\alpha: \Delta^k \to Y$ defines a $\Delta^k$-parameter family of points $\alpha(p)$ on $Y$, while the image $Z(\alpha)$ defines a continuous $\Delta^k$-parameter family of subvarieties $Z(\alpha(p))$, for $p\in \Delta^k, \alpha(p)\in Y$. The generic dimension of $Z(\alpha(p))$ is discussed in \ref{sing-dim}, \ref{dim-est}. If $\sum_{i} \alpha_i$ is singular chain representing the fundamental class $[Y]$, then the chain sum $Z(\sum_{i} \alpha_i)=\sum_{i} Z(\alpha_i)$ defines a $Y$-parameter ``sweepout" of the activated source $Z_1$ by fibres $Z(y), y\in Y$.
+
+%, which relates the operator $\tilde{\del} Z(\alpha)$ to the image of the chain sum $Z(\delta_Y(\alpha))$.
+
+The polar correspondance leads to the following useful adjunction formula.
+\begin{prop}[Adjunction formula]
+Let $Y=\del P$ be boundary of a compact convex polyhedron $P$ in $\bR^{d+1}$, and let $\delta=\delta_Y$ be the differential (coboundary degree $(+1)$ map between simplicial chain groups of $\del P$) constructed above. The correspondance $$\alpha \mapsto Z(\delta_Y \alpha)$$ defines a boundary-type operator on the image of $Z$ in $2^X$, and we have the following adjunction formula \begin{equation}
+\del_X Z(\alpha)=Z(\delta_Y \alpha),   \label{adj}
+\end{equation} where equality is with respect to singular chains on $X$ with coefficients in $\bZ/2$. 
+\end{prop}
+\begin{proof}
+The identity \eqref{adj} is an adjunction formula, and everything follows as formal consequence of the ``transport-de-structure" in the sense of Bourbaki, c.f. \cite[IV.1.5]{bourbaki}. The contravariance of $Z:2^Y \to 2^X$ implies every cochain complex on $Y$ is naturally pushed forward to a chain complex on $X$, or specifically to the support of $Z$. 
+\end{proof}
+Admittedly the identity \ref{adj} is purely formal, and a trivial consequence of the \emph{contravariance} of $Z$. Yet it allows us to construct singular cycles on $X$ via chain sums of the singularity cells $Z'$. The cycles on $X$ arise from \emph{cocycles} on $Y$. However in our setting the cocycles on $Y$ are not obtained from differential forms nor deRham cohomology. The cocycles are constructed from the Koszul complex, and are formally algebraic, and not analytic. Evenmore, our idea is to construct a differential (degree +1) map directly between the chain groups. In otherwords, our coboundary is a differential between chain groups going in the ``wrong" direction.  
+
+%The cocycles and cochain complex on $Y$ is easily constructed when $Y$ is finite.
+
+
+
+\begin{rem} 
+If $P$ is a smooth closed projective subvariety, with explicit embedding $P \subset Proj(\bR^{N+1})$, then there is classical projective dual variety $P^\vee$, which is typically immersed into $Proj(\bR^{N+1})^\vee=Proj((\bR^{N+1})^*)$ and not necessarily smooth. However if the singular chain groups of $P^\vee$ can be evaluated, then the chain boundary $\del_{P^\vee}$, as above, defines a $(+1)$-degree map $\del_Y$ according to the same formula \eqref{dualdel}. The adjunction formula can be extended to projective subvarieties $P$ when $P^\vee$ has well-defined singular chain groups and singular homology. 
+\end{rem}
+
+The adjunction formula \eqref{adj} is useful in that $\delta_Y$ cocycles on $Y$ are seen to produce homological cycles on $X$, and with everything defined and evaluated in terms of singular chains. %The formal relation $Z(0_Y)=0_X$ proves $Z(\alpha)$ is a homological cycle whenever $\delta_Y \alpha =0$.
+
+\begin{cor} \label{cycle}
+Let $Z:2^Y \to 2^X$ be Kantorovich's contravariant functor relative to a $c$-concave potential $\psi^{cc}=\psi$. The following equalities are with respect to $\bZ/2$ singular (co)chains. 
+\begin{itemize}
+\item[(i)] If $\alpha$ is a cocycle $\delta \alpha = 0$ on $Y$, then $Z(\alpha)$ is a chain sum representing a singular cycle $\del Z(\alpha)=0$ on $X$. 
+\item[(ii)] If $\alpha=\delta \beta$ is an exact $q$-cocycle on $Y$, then $Z(\alpha)=Z(\delta \beta)=\del Z(\beta)$ is a boundary on $X$ satisfying $\del Z(\alpha)=\del \circ \del Z(\beta)=0$.
+\item[(iii)] Suppose $Y$ is finite subset. If we define $Z_1:=\cup_{y\in Y} Z(y)$, then $Z_1$ is a closed subvariety of $X$ whenever the hypotheses of \ref{singboundprop} are satisfied. 
+\end{itemize}
+\end{cor}
+\begin{proof}
+Formula \eqref{adj} yields (i) and (ii). To prove (iii), we apply \ref{singboundprop} and observe $\delta 1= \sum_{y\in Y} y$, so $Z(\delta 1)=\sum_{y\in Y} Z(y),$ is coincident with $Z_1$. Thus \eqref{adj} yields $\del Z_1=\del Z(\delta 1)$ $=Z(\delta \circ \delta 1)=Z(0)=0.$ 
+\end{proof}
+
+%The cocycles $\alpha$ on $2^Y$ will be mapped by $Z$ to trivial $0$ element $Z(\alpha)=0$ if $\alpha$ is not supported on the subcategory $spt(Z)$ of $2^X$. If $Z=Z(c, \sigma, \tau)$ is the Kantorovich singularity of a $c$-optimal semicoupling between  source Hausdorff measure $\sigma$ and target Hausdorff measure $\tau$, then the active domain is an open subset of $X$, and $q$-dimensional cocycles $\alpha$ supported on $spt(Z)$ are generally mapped to codimension-$q$ cycles $Z(\alpha)$ on $X$. 
+
+%[Insert: weak-* limit definition of $\del_X$: requires hypothesess]
+
+\begin{rem}
+If we had a covariant functor (rather than contravariant) e.g. $\cup f^{-1}: 2^Y \to 2^X$ for a continuous proper map $f: X\to Y$, then cochain complexes on $2^Y$ could not be transported. The map $f$ yields a natural covariant functor $\cup f: 2^X \to 2^Y$, defined by the usual set-theoretic map $f(X_I)=\cup_{x\in X_I} f(x)$. In this case the cubical cochain complex on $Y$ readily pullsback to cochain complex on $X$. This basically coincides with the usual $0$-degree pullback $H^*(f): H^*(Y) \to H^*(X)$ defined between singular cohomology groups and cochain complexes. 
+\end{rem}
+
+
+%% Applications ? 
+
+\printbibliography[title={References}]
+\end{document}
